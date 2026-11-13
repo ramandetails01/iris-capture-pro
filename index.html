@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iris Capture Pro | MIS100V2</title>
+<style>
+:root{font-family:Arial, sans-serif;color:#172033;background:#f3f6fb}
+*{box-sizing:border-box}body{margin:0;padding:24px}
+.wrap{max-width:850px;margin:auto}.top{background:#14213d;color:white;padding:26px;border-radius:18px}
+.top h1{margin:0 0 8px;font-size:28px}.muted{color:#64748b}.top p{margin:0;color:#dbe5f5}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:20px;margin-top:18px}
+h2{font-size:19px;margin:0 0 14px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+button,.link{border:0;border-radius:10px;padding:12px 16px;background:#155eef;color:white;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+button.secondary,.link.secondary{background:#e8eef9;color:#183153}
+.status{padding:12px;border-radius:10px;background:#fff7e6;color:#854d0e;margin-top:12px;line-height:1.5}
+.good{background:#ecfdf3;color:#166534}.bad{background:#fff1f2;color:#9f1239}
+li{margin:9px 0;line-height:1.45}.small{font-size:13px;line-height:1.5}
+footer{padding:20px 4px;color:#64748b;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Iris Capture Pro</h1>
+    <p>Mantra MIS100V2 • Windows 11 • RD Service setup assistant</p>
+  </header>
+
+  <section class="card">
+    <h2>Device setup checklist</h2>
+    <ol>
+      <li>Connect the MIS100V2 scanner directly to a USB port on your Windows PC.</li>
+      <li>Confirm the official Mantra MIS100V2 driver is installed.</li>
+      <li>Confirm the Mantra MIS100V2 RD Service is installed and running.</li>
+      <li>Use only the capture workflow supplied by your authorised Aadhaar AUA/KUA or approved service provider.</li>
+    </ol>
+    <div class="row">
+      <a class="link" href="https://servico.mantratecapp.com/Home/Drivers.html" target="_blank" rel="noopener">Official Mantra Downloads</a>
+      <a class="link secondary" href="https://digitalseva.csc.gov.in/" target="_blank" rel="noopener">CSC Digital Seva</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>RD Service status</h2>
+    <p class="small muted">This GitHub Pages site cannot directly inspect Windows services or verify a local RD Service. Use Windows Services to check it.</p>
+    <ol>
+      <li>Press <b>Win + R</b>, type <code>services.msc</code>, and press Enter.</li>
+      <li>Find the Mantra MIS100V2 RD Service entry.</li>
+      <li>Check that its status is <b>Running</b>. If stopped, use Start (if available).</li>
+    </ol>
+    <button type="button" id="checked">I checked: RD Service is Running</button>
+    <div id="result" class="status" role="status" aria-live="polite">Status not confirmed yet. This button records your manual check only; it does not communicate with the scanner.</div>
+  </section>
+
+  <section class="card">
+    <h2>Important biometric privacy notice</h2>
+    <p class="small">Aadhaar RD Service is designed to provide an authorised, encrypted biometric authentication flow. This website does not extract, display, save, or download raw iris images or PID data. Do not attempt to bypass RD Service protections or store residents' biometric data.</p>
+    <p class="small">For live Aadhaar Iris authentication, your CSC/VLE application must be enabled by an authorised AUA/KUA or service provider and must integrate the supported Mantra RD workflow. A public GitHub Pages website alone cannot grant Aadhaar authentication access.</p>
+  </section>
+
+  <footer>Starter site • No Aadhaar number or biometric data is collected by this page.</footer>
+</div>
+<script>
+document.getElementById('checked').addEventListener('click', function () {
+  const box = document.getElementById('result');
+  box.className = 'status good';
+  box.textContent = 'You have marked the service as Running. This is a manual confirmation only, not a live device test.';
+});
+</script>
+</body>
+</html>
